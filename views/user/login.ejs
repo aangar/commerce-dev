@@ -1,0 +1,18 @@
+<% layout('./partials/boilerplate') %>
+
+    <div class="loginContainer">
+        <div class="loginFormContainer">
+            <h1>Login Form!</h1>
+            <form action="/users/login" method="POST">
+                <div class="userPassContainer">
+                    <label for="username">Username: </label>
+                    <input type="text" name="username" id="username">
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <button>Login!</button>
+            </form>
+        </div>
+
+    </div>

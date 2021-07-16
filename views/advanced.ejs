@@ -1,0 +1,93 @@
+<% layout('./partials/boilerplate') %>
+
+    <div class="advSearchContainer">
+        <form action="/advanced/constraints" method="GET">
+            <% if(searchVal) {%>
+                <h1 id="flashHeader">Please Select a Type of Product!</h1>
+                <% } %>
+                    <div class="price">
+                        <h2>Price : </h2>
+                        <div class="priceContainer">
+                            $<input type="number" name="price" id="min" value="0">
+                            to
+                            $<input type="number" name="price" id="max">
+                        </div>
+                    </div>
+                    <div class="brand">
+                        <h2>Brand(s) : </h2>
+                        <div class="brandContainer">
+                            <ul>
+                                <li><label for=""><input type="checkbox" name="brand" value="Under Armour">Under
+                                        Armour</label>
+                                </li>
+                                <li><label for=""><input type="checkbox" name="brand" value="Adidas">Adidas</label></li>
+                                <li> <label for=""><input type="checkbox" name="brand" value="Nike">Nike</label></li>
+                                <li> <label for=""><input type="checkbox" name="brand" value="Puma">Puma</label></li>
+                                <li> <label for=""><input type="checkbox" name="brand" value="Tommy Hilfilger">Tommy
+                                        Hilfilger</label></li>
+                                <li> <label for=""><input type="checkbox" name="brand" value="Other">Other</label></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="color">
+                        <h2>Color(s) : </h2>
+                        <div class="colorContainer">
+                            <ul>
+                                <li><label for=""><input type="checkbox" name="color" value="Purple">Purple</label>
+                                </li>
+                                <li><label for=""><input type="checkbox" name="color" value="Red">Red</label></li>
+                                <li> <label for=""><input type="checkbox" name="color" value="Yellow">Yellow</label>
+                                </li>
+                                <li> <label for=""><input type="checkbox" name="color" value="Green">Green</label></li>
+                                <li> <label for=""><input type="checkbox" name="color" value="Blue">Blue</label></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sizeType">
+                        <div class=".stTypeCont">
+                            <h2>Type : <select name="type" id="type">
+                                    <option value="noval">--SELECT A TYPE--</option>
+                                    <option value="Shirt">Shirt</option>
+                                    <option value="Pants">Pants</option>
+                                    <option value="Shorts">Shorts</option>
+                                    <option value="Socks">Socks</option>
+                                    <option value="Glove">Gloves</option>
+                                    <option value="Shoes">Shoes</option>
+                                    <option value="Jacket">Jackets</option>
+                                    <option value="Underwear">Underwear</option>
+                                </select> </h2>
+                        </div>
+                        <div class="genderCont">
+                            <h2>Gender : <select name="gender" id="gender">
+                                <option value="noval">--SELECT A GENDER--</option>
+                                <option value="Boys">Boys</option>
+                                <option value="Girls">Girls</option>
+                                <option value="Mens">Mens</option>
+                                <option value="Womens">Womens</option>
+                                <option value="Unisex">Unisex</option>
+                            </select></h2>
+                        </div>
+                        <div class="stSizeCont">
+                            <h2 id="sizeHeader">Size : <select name="size" id="size">
+                                    <option value="noval">--SELECT A SIZE--</option>
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                    <option value="XXL">XXL</option>
+                                </select></h2>
+                        </div>
+
+
+                    </div>
+
+                    <button>Search</button>
+
+        </form>
+    </div>
+    <script src="js/advSearchCheck.js"></script>

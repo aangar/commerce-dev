@@ -1,0 +1,68 @@
+<% layout('./partials/boilerplate') %>
+
+    <div class="sortOptions">
+        <div class="searchQuery">
+            <form action="/filter" method="GET">
+                <h2 style="font-weight: 400;">Search by type of product, or the name.</h2>
+                <div class="searchBar">
+                    <input type="text" placeholder="what are you searching for?" name="query">
+                    <img src="assets/search.png" alt="">
+
+                </div>
+            </form>
+        </div>
+        <span></span>
+        <div class="type">
+            <form action="/filter/type" method="GET">
+                <label for=""><input type="radio" name="query" value="Shirt">Shirts</label>
+                <label for=""><input type="radio" name="query" value="Pants">Pants</label>
+                <label for=""><input type="radio" name="query" value="Shorts">Shorts</label>
+                <label for=""><input type="radio" name="query" value="Socks">Socks</label>
+                <label for=""><input type="radio" name="query" value="Glove">Gloves</label>
+                <label for=""><input type="radio" name="query" value="Shoes">Shoes</label>
+                <label for=""><input type="radio" name="query" value="Underwear">Underwear</label>
+                <label for=""><input type="radio" name="query" value="Jacket">Jackets</label>
+
+                <button>Search for Items</button>
+            </form>
+        </div>
+        <span></span>
+        <div class="detailed">
+            <h2>The searches above not getting what you wanted? Try our
+                <a href="/advanced" style="color:#4361ee; ">Advanced Search</a>
+                instead.
+            </h2>
+        </div>
+    </div>
+
+    <% if(matches.length===0) {%>
+        <div class="none">
+            <div class="noneCenter">
+                <h1>Hmmm... no results for <%=search %> . We either don't have what you are looking for, or maybe it was
+                        a spelling
+                        mishap?</h1>
+            </div>
+
+        </div>
+        <% } else { %>
+            <div class="products">
+                <% for(let m of matches) {%>
+                    <div class="item">
+                        <h2>
+                            <%= m.name %>
+                        </h2>
+                        <div class="imgContainer">
+                            <img src="https://images.unsplash.com/photo-1497339100210-9e87df79c218?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                                alt="">
+                        </div>
+                        <div class="itemInfo">
+                            <span>Listing Price : $<%= m.price %> </span>
+                            <span>Brand : <%= m.brand %> </span>
+                            <a href=products/<%=m._id %> >View Item</a>
+                        </div>
+
+                    </div>
+                    <% } %>
+                        <% } %>
+
+            </div>

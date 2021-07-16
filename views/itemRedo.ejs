@@ -1,0 +1,33 @@
+<% layout('./partials/boilerplate') %>
+
+    <div class="itemInfoContainer">
+        <div class="generalItemContainer">
+            <div class="itemImageContainer">
+                <img src="https://images.unsplash.com/photo-1497339100210-9e87df79c218?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+                    alt="">
+            </div>
+            <div class="itemListingInfo">
+                <h1>
+                    <%=product.name %>
+                </h1>
+                <div class="otherStuff">
+                    <p>Item Description : <%= product.description %>
+                    </p>
+                    <h2>Listing Price: $<%= product.price %>
+                    </h2>
+                    <h2>Size: <%= product.size %>
+                    </h2>
+                    <h2>Color: <%= product.color %>
+                    </h2>
+                    <h2>Gender: <%= product.gender %>
+                    </h2>
+                    <h2>Brand: <%= product.brand %>
+                    </h2>
+                    <form action="cart/update?_method=PUT" method="POST">
+                        <button>Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>

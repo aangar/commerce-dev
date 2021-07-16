@@ -1,0 +1,39 @@
+<% layout('./partials/boilerplate') %>
+    <div class="cartMainContainer">
+        <div class="cartItemsContainer">
+            <h1>Your Current Cart:</h1>
+            <div class="cartItemsList">
+                <% if(cart.length <=0) {%>
+                    <h1>nothing???</h1>
+                    <% }else{ %>
+
+                        <% for(let c of cart) {%>
+                            <div id="itemCartContainer">
+                                <div class="itemCartImageContainer">
+                                    <img src="https://i2.wp.com/wallpapermaiden.com/image/2019/05/09/anime-girl-animal-ears-roar-nekomimi-cute-loli-33020-resized.jpeg"
+                                        alt="">
+                                </div>
+                                <div class="itemCartInfoContainer">
+                                    <h2>
+                                        <%= c.name %>
+                                    </h2>
+                                    <a href="/remove/<%=c._id %> ">Remove</a>
+
+                                    <span></span>
+                                    <h2>
+                                        Price: $<%= c.price %>
+                                    </h2>
+
+
+                                </div>
+                            </div>
+                            <% } %>
+            </div>
+            <div class="totalPayNow">
+                <h2>Total Price : $<%=total %>
+                </h2> <a href="" id="cart" style="margin-left: 20px; text-decoration: none;">Checkout</a>
+
+            </div>
+        </div>
+    </div>
+    <% } %>
