@@ -20,3 +20,5 @@ anyways...
 ill keep uploading as i go and just have a 'copy' online in case i want to redownload it later and work on it elsewhere, if it wasnt one of my personal devices.
 
 for now, that's all thatll be here on the readme, so yeah, keep tuned :)
+
+**disclaimer : this is going to be stable and full updates ONLY. if you want to see my current progress, check out my eCommerce repo**
